@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, Phone, X } from "lucide-react";
+import logo from "@/assets/brajmiles-logo.png";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -30,9 +31,7 @@ export function Header() {
     >
       <div className="container-pro flex h-16 items-center justify-between md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <div className="grid h-10 w-10 place-items-center rounded-full bg-gradient-brand text-brand-foreground font-display text-lg font-bold shadow-soft">
-            T
-          </div>
+          <img src={logo} alt="Brajmiles.com logo" className="h-12 w-12 rounded-full object-cover shadow-soft" />
           <div className="leading-tight">
             <div className={`font-display text-base font-bold ${scrolled ? "text-foreground" : "text-white"}`}>
               brajmiles.com

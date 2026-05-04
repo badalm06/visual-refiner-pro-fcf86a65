@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react";
+import logo from "@/assets/brajmiles-logo.png";
 
 export function Footer() {
   return (
@@ -6,9 +7,7 @@ export function Footer() {
       <div className="container-pro grid gap-12 py-20 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
-            <div className="grid h-10 w-10 place-items-center rounded-full bg-gradient-brand font-display text-lg font-bold text-brand-foreground">
-              T
-            </div>
+            <img src={logo} alt="Brajmiles.com logo" className="h-12 w-12 rounded-full object-cover" />
             <div>
               <div className="font-display text-base font-bold">brajmiles.com</div>
               <div className="text-[10px] uppercase tracking-[0.2em] text-background/60">&nbsp; Pvt. Ltd.</div>

@@ -36,40 +36,40 @@
   --color-ink: var(--ink);
   --font-display: "Playfair Display", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
-  --shadow-card: 0 10px 40px -12px rgba(255, 106, 0, 0.25), 0 4px 20px -8px rgba(0, 0, 0, 0.6);
-  --shadow-soft: 0 4px 20px -8px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 10px 40px -12px rgba(255, 106, 0, 0.25), 0 4px 20px -8px rgba(0, 0, 0, 0.15);
+  --shadow-soft: 0 4px 20px -8px rgba(0, 0, 0, 0.15);
   --shadow-glow: 0 0 24px rgba(255, 106, 0, 0.45);
   --gradient-brand: linear-gradient(135deg, #FF6A00 0%, #FF8C42 100%);
-  --gradient-overlay: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.85) 100%);
-  --gradient-hero: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.75) 100%);
+  --gradient-overlay: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.6) 100%);
+  --gradient-hero: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.55) 100%);
 }
 
 :root {
   --radius: 0.75rem;
-  /* Premium black / white / orange palette */
-  --background: #0B0B0B;
-  --foreground: #FFFFFF;
-  --ink: #000000;
-  --card: #1A1A1A;
-  --card-foreground: #FFFFFF;
-  --popover: #1A1A1A;
-  --popover-foreground: #FFFFFF;
+  /* Premium white / black / orange palette */
+  --background: #FFFFFF;
+  --foreground: #0B0B0B;
+  --ink: #FFFFFF;
+  --card: #F5F5F5;
+  --card-foreground: #0B0B0B;
+  --popover: #FFFFFF;
+  --popover-foreground: #0B0B0B;
   --primary: #FF6A00;
   --primary-foreground: #FFFFFF;
   --brand: #FF6A00;
   --brand-foreground: #FFFFFF;
-  --brand-dark: #1A1A1A;
+  --brand-dark: #0B0B0B;
   --gold: #FF8C42;
-  --secondary: #1A1A1A;
-  --secondary-foreground: #FFFFFF;
-  --muted: #1A1A1A;
-  --muted-foreground: #BFBFBF;
-  --accent: #1F1F1F;
+  --secondary: #F5F5F5;
+  --secondary-foreground: #0B0B0B;
+  --muted: #F2F2F2;
+  --muted-foreground: #4A4A4A;
+  --accent: #F5F5F5;
   --accent-foreground: #FF6A00;
   --destructive: #FF4D4D;
   --destructive-foreground: #FFFFFF;
-  --border: #2A2A2A;
-  --input: #2A2A2A;
+  --border: #E5E5E5;
+  --input: #E5E5E5;
   --ring: #FF6A00;
 }
 

@@ -9,7 +9,7 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <img src={logo} alt="Brajmiles.com logo" className="h-12 w-12 rounded-full object-cover" />
             <div>
-              <div className="font-display text-base font-bold">brajmiles.com</div>
+              <div className="font-display text-base font-bold">Brajmiles.com</div>
               <div className="text-[10px] uppercase tracking-[0.2em] text-background/60">&nbsp; Pvt. Ltd.</div>
             </div>
           </div>
@@ -64,7 +64,7 @@ export function Footer() {
 
       <div className="border-t border-background/10">
         <div className="container-pro flex flex-col items-center justify-between gap-3 py-6 text-xs text-background/60 md:flex-row">
-          <div>© {new Date().getFullYear()} brajmiles.com Pvt. Ltd. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Brajmiles.com Pvt. Ltd. All rights reserved.</div>
           <div className="flex gap-5">
             <a href="#" className="hover:text-gold">Privacy</a>
             <a href="#" className="hover:text-gold">Terms</a>

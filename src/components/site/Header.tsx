@@ -34,7 +34,7 @@ export function Header() {
           <img src={logo} alt="Brajmiles.com logo" className="h-12 w-12 rounded-full object-cover shadow-soft" />
           <div className="leading-tight">
             <div className={`font-display text-base font-bold ${scrolled ? "text-foreground" : "text-white"}`}>
-              brajmiles.com
+              Brajmiles.com
             </div>
             <div className={`text-[10px] uppercase tracking-[0.2em] ${scrolled ? "text-muted-foreground" : "text-white/80"}`}>
               &nbsp;

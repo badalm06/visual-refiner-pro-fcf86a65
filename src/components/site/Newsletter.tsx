@@ -14,7 +14,7 @@ export function Newsletter() {
                 </h2>
                 <p className="mt-4 max-w-lg text-brand-foreground/85">
                   Join 25,000+ travellers receiving curated deals, itineraries, and seasonal
-                  recommendations from brajmiles.com.
+                  recommendations from Brajmiles.com.
                 </p>
               </div>
               <form

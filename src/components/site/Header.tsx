@@ -38,7 +38,7 @@ export function Header() {
               Travel India
             </div>
             <div className={`text-[10px] uppercase tracking-[0.2em] ${scrolled ? "text-muted-foreground" : "text-white/80"}`}>
-              Tourism
+              &nbsp;
             </div>
           </div>
         </Link>

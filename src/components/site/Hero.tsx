@@ -1,18 +1,18 @@
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden">
-      <video
-        src="/hero-video.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
-      />
-      <div
-        className="absolute inset-0 -z-10"
-        style={{ background: "var(--gradient-hero)" }}
-      />
+    <section className="relative bg-background pt-24 pb-10 md:pt-28 md:pb-14">
+      <div className="container-pro">
+        <div className="relative overflow-hidden rounded-3xl shadow-card">
+          <video
+            src="/hero-video.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-[60vh] w-full object-cover md:h-[70vh]"
+          />
+        </div>
+      </div>
     </section>
   );
 }

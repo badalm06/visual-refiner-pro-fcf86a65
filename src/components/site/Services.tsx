@@ -1,13 +1,12 @@
-import { Plane, Hotel, Car, Compass, Ship, Mountain } from "lucide-react";
 import { Reveal } from "./Reveal";
+import luxuryStay from "@/assets/service-luxury-stay.jpeg";
+import transport from "@/assets/service-transport.jpeg";
+import tourGuide from "@/assets/service-tour-guide.jpeg";
 
 const SERVICES = [
-  { icon: Plane, title: "Flight Bookings", desc: "Best fares on domestic and international routes." },
-  { icon: Hotel, title: "Hotel Stays", desc: "Hand-picked properties in every budget tier." },
-  { icon: Car, title: "Private Transport", desc: "Comfortable cabs and tempo travellers, 24/7." },
-  { icon: Compass, title: "Custom Itineraries", desc: "Tours shaped around what you love most." },
-  { icon: Ship, title: "Cruises & Houseboats", desc: "Backwaters, Andaman, and luxury cruises." },
-  { icon: Mountain, title: "Adventure Tours", desc: "Treks, rafting and high-altitude expeditions." },
+  { img: luxuryStay, title: "Luxury Stay" },
+  { img: transport, title: "Complete Transport" },
+  { img: tourGuide, title: "Tour Guide" },
 ];
 
 export function Services() {
@@ -15,22 +14,23 @@ export function Services() {
     <section className="py-20 md:py-28">
       <div className="container-pro">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">What we do</span>
-          <h2 className="mt-3 text-4xl font-bold text-foreground md:text-5xl">Our Services</h2>
-          <p className="mt-4 text-muted-foreground">
-            Everything you need for a seamless journey — under one roof.
-          </p>
+          <h2 className="text-4xl font-bold text-foreground md:text-5xl">Our Services</h2>
         </Reveal>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s, i) => (
-            <Reveal key={s.title} delay={i * 70}>
-              <div className="hover-lift group h-full rounded-2xl border border-border bg-card p-7">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-brand text-brand-foreground shadow-soft transition-transform group-hover:scale-110">
-                  <s.icon className="h-6 w-6" />
+            <Reveal key={s.title} delay={i * 90}>
+              <div className="hover-lift group flex aspect-square flex-col items-center justify-between rounded-2xl bg-[#BFE0FF] p-6">
+                <div className="flex flex-1 items-center justify-center">
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    className="max-h-[78%] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-                <h3 className="mt-5 text-xl font-semibold text-card-foreground">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+                <h3 className="mt-2 text-xl font-bold tracking-tight text-foreground md:text-2xl">
+                  {s.title}
+                </h3>
               </div>
             </Reveal>
           ))}

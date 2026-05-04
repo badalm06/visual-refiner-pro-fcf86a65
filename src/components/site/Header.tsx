@@ -39,12 +39,12 @@ export function Header() {
           </div>
         </Link>
 
-        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-6 lg:flex xl:gap-8">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-3 md:flex lg:gap-6 xl:gap-8">
           {NAV.map((n) => (
             <Link
               key={n.to}
               to={n.to}
-              className="whitespace-nowrap text-sm font-medium text-foreground transition-colors hover:text-brand"
+              className="whitespace-nowrap text-xs font-medium text-foreground transition-colors hover:text-brand lg:text-sm"
               activeProps={{ className: "text-brand" }}
             >
               {n.label}
@@ -52,10 +52,10 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-3 lg:flex">
+        <div className="hidden shrink-0 items-center gap-3 md:flex">
           <a
             href="tel:+917552421243"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-4 py-2 text-sm font-semibold text-brand-foreground shadow-soft transition-transform hover:-translate-y-0.5 xl:px-5 xl:py-2.5"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-3 py-2 text-xs font-semibold text-brand-foreground shadow-soft transition-transform hover:-translate-y-0.5 lg:text-sm xl:px-5 xl:py-2.5"
           >
             <Phone className="h-4 w-4" />
             <span className="hidden xl:inline">+91 75524 21243</span>
@@ -66,14 +66,14 @@ export function Header() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="text-foreground lg:hidden"
+          className="text-foreground md:hidden"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background/95 backdrop-blur lg:hidden">
+        <div className="border-t border-border bg-background/95 backdrop-blur md:hidden">
           <div className="container-pro flex flex-col gap-1 py-4">
             {NAV.map((n) => (
               <Link

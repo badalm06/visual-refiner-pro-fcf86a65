@@ -12,6 +12,8 @@ const TOURS = [
   { img: braj3, title: "Govardhan Tour", count: "Day-2" },
   { img: braj4, title: "Mathura Tour", count: "Day-4" },
   { img: braj5, title: "Nandgaon Tour", count: "Day-5" },
+  { img: braj1, title: "Gokul Tour", count: "Day-6" },
+  { img: braj2, title: "Radha Kund Tour", count: "Day-7" },
 ];
 
 export function Packages() {

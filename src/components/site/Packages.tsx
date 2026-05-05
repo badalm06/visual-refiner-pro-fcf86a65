@@ -20,15 +20,15 @@ export function Packages() {
   return (
     <section id="packages" className="bg-secondary py-20 md:py-28">
       <div className="container-pro">
-        <Reveal className="flex flex-wrap items-end justify-between gap-6">
+        <Reveal className="flex flex-wrap items-end justify-between gap-6 text-left mx-[150px]">
           <div className="max-w-xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">Curated trips</span>
-            <h2 className="mt-3 text-4xl font-bold text-foreground md:text-5xl">Holidays designed for you</h2>
-            <p className="mt-4 text-muted-foreground">
-              Best-selling packages chosen by thousands of happy travellers.
+            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand mx-[100px] text-center block">memorable  trips</span>
+            <h2 className="mt-3 text-4xl text-foreground md:text-5xl my-px text-center font-extrabold border-orange-600 border-0 rounded-none">Complete Braj Tour</h2>
+            <p className="mt-4 text-muted-foreground text-center">
+              Let's experience the divine & spritual journey of Braj
             </p>
           </div>
-          <a href="#" className="text-sm font-semibold text-brand hover:underline">View all packages →</a>
+          <a href="#" className="text-sm font-semibold text-brand hover:underline">​</a>
         </Reveal>
 
         <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">

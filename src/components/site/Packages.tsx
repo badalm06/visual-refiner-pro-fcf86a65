@@ -8,7 +8,7 @@ import { Reveal } from "./Reveal";
 
 const TOURS = [
   { img: kashmir, title: "Vrindavan Tour", count: "Day-1" },
-  { img: ladakh, title: "Ladakh Tour", count: 4 },
+  { img: ladakh, title: "Barsana Tour", count: "Day-3" },
   { img: darjeeling, title: "Darjeeling Tour", count: 6 },
   { img: goa, title: "Andaman Tour", count: 4 },
   { img: rajasthan, title: "Rajasthan Tour", count: 5 },

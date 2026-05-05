@@ -1,20 +1,17 @@
 import brajCircle from "@/assets/brajmiles-circle.jpeg";
-import brajTemple from "@/assets/braj-temple.jpeg";
-import kashmir from "@/assets/dest-kashmir.jpg";
-import kerala from "@/assets/dest-kerala.jpg";
-import rajasthan from "@/assets/dest-rajasthan.jpg";
-import ladakh from "@/assets/dest-ladakh.jpg";
-import goa from "@/assets/dest-goa.jpg";
-import darjeeling from "@/assets/dest-darjeeling.jpg";
+import braj1 from "@/assets/braj-1.jpeg";
+import braj2 from "@/assets/braj-2.jpeg";
+import braj3 from "@/assets/braj-3.jpeg";
+import braj4 from "@/assets/braj-4.jpeg";
+import braj5 from "@/assets/braj-5.jpeg";
 import { Reveal } from "./Reveal";
 
 const TOURS = [
-  { img: brajTemple, title: "Vrindavan Tour", count: "Day-1" },
-  { img: ladakh, title: "Barsana Tour", count: "Day-3" },
-  { img: darjeeling, title: "Darjeeling Tour", count: 6 },
-  { img: goa, title: "Andaman Tour", count: 4 },
-  { img: rajasthan, title: "Rajasthan Tour", count: 5 },
-  { img: kerala, title: "Kerala Tour", count: 6 },
+  { img: braj1, title: "Vrindavan Tour", count: "Day-1" },
+  { img: braj2, title: "Barsana Tour", count: "Day-3" },
+  { img: braj3, title: "Govardhan Tour", count: "Day-2" },
+  { img: braj4, title: "Mathura Tour", count: "Day-4" },
+  { img: braj5, title: "Nandgaon Tour", count: "Day-5" },
 ];
 
 export function Packages() {

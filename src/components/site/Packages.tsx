@@ -31,43 +31,35 @@ export function Packages() {
           <a href="#" className="text-sm font-semibold text-brand hover:underline">​</a>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
-          {/* Featured promo card (left, spans 2 rows) */}
-          <Reveal className="lg:row-span-2">
-            <article className="relative h-full min-h-[420px] overflow-hidden rounded-2xl shadow-soft">
-              <img
-                src={PACKAGES[0].img}
-                alt="Exclusive Tour"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
-              <div className="relative flex h-full flex-col justify-center p-8 text-white">
-                <div className="font-display text-4xl md:text-5xl">
-                  <span className="italic">Exclusive</span> <span className="font-bold">Tour</span>
-                </div>
-                <div className="mt-4 text-5xl font-bold md:text-6xl">
-                  20<span className="text-3xl align-top">%</span>
-                </div>
-                <div className="mt-1 text-lg tracking-wider">OFF</div>
-                <button className="mt-6 w-fit rounded-full bg-white px-6 py-2 text-xs font-bold tracking-widest text-foreground hover:bg-brand hover:text-background">
-                  BOOK NOW
-                </button>
-              </div>
-            </article>
-          </Reveal>
-
-          {/* Right grid: 2 columns x 2 rows with remaining packages */}
-          {PACKAGES.slice(0, 6).map((p, i) => (
-            <Reveal key={p.title} delay={i * 60}>
-              <article className="hover-lift group relative overflow-hidden rounded-2xl shadow-soft">
+        <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          {PACKAGES.map((p, i) => (
+            <Reveal key={p.title} delay={i * 80}>
+              <article className="hover-lift group overflow-hidden rounded-2xl bg-card shadow-soft">
                 <div className="img-zoom relative aspect-[4/3]">
-                  <img src={p.img} alt={`${p.location} Tour`} loading="lazy" className="h-full w-full object-cover" />
-                  <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/60 to-transparent" />
-                  <h3 className="absolute left-4 top-3 text-lg font-bold text-white drop-shadow">
-                    {p.location} Tour
-                  </h3>
-                  <div className="absolute inset-x-4 bottom-3 rounded-md bg-white/80 py-1.5 text-center text-xs font-medium text-foreground backdrop-blur">
-                    {Math.max(3, Math.round(p.rating))} Tour Packages
+                  <img src={p.img} alt={p.title} loading="lazy" className="h-full w-full object-cover" />
+                  <div className="absolute inset-x-0 bottom-0 h-1/2" style={{ background: "var(--gradient-overlay)" }} />
+                  <div className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-foreground">
+                    <Star className="h-3 w-3 fill-gold text-gold" /> {p.rating}
+                  </div>
+                  <div className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 text-xs font-medium text-white">
+                    <MapPin className="h-3.5 w-3.5" /> {p.location}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="line-clamp-1 text-lg font-semibold text-card-foreground">{p.title}</h3>
+                  <div className="mt-2 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <Clock className="h-3.5 w-3.5" /> {p.days}
+                  </div>
+                  <div className="mt-5 flex items-end justify-between border-t border-border pt-4">
+                    <div>
+                      <div className="text-[11px] uppercase tracking-wider text-muted-foreground">Starting from</div>
+                      <div className="font-display text-2xl font-bold text-brand">
+                        ₹{p.price.toLocaleString("en-IN")}
+                      </div>
+                    </div>
+                    <button className="rounded-full bg-foreground px-5 py-2 text-xs font-semibold text-background transition-colors hover:bg-brand">
+                      Book now
+                    </button>
                   </div>
                 </div>
               </article>

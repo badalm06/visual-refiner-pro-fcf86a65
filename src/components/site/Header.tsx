@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Menu, Phone, X } from "lucide-react";
+import { Facebook, Instagram, Mail, Menu, Phone, Youtube, X } from "lucide-react";
 import logo from "@/assets/brajmiles-logo.png";
 
 const NAV = [

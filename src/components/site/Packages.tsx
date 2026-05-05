@@ -7,7 +7,7 @@ import darjeeling from "@/assets/dest-darjeeling.jpg";
 import { Reveal } from "./Reveal";
 
 const TOURS = [
-  { img: kashmir, title: "Kashmir Tour", count: 5 },
+  { img: kashmir, title: "Vrindavan Tour", count: "Day-1" },
   { img: ladakh, title: "Ladakh Tour", count: 4 },
   { img: darjeeling, title: "Darjeeling Tour", count: 6 },
   { img: goa, title: "Andaman Tour", count: 4 },
@@ -42,9 +42,9 @@ export function Packages() {
                   <em className="not-italic font-serif italic text-left">We Are Center of 'Braj'</em> <span className="font-semibold">​</span>
                 </div>
                 <div className="mt-4 text-5xl font-bold md:text-6xl">
-                  20<span className="text-3xl md:text-4xl">%</span>
+                  ​<span className="text-3xl md:text-4xl">​</span>
                 </div>
-                <div className="text-2xl font-light tracking-widest">OFF</div>
+                <div className="text-2xl font-light tracking-widest">​</div>
                 <button className="mt-6 w-fit rounded-full bg-white px-6 py-2.5 text-xs font-bold tracking-widest text-foreground hover:bg-brand hover:text-white transition-colors">
                   BOOK NOW
                 </button>
@@ -66,8 +66,8 @@ export function Packages() {
                 <h3 className="absolute left-0 right-0 top-4 text-center text-lg font-bold text-white">
                   {t.title}
                 </h3>
-                <div className="absolute inset-x-4 bottom-4 rounded-md bg-white/85 px-4 py-2 text-center text-sm font-medium text-foreground backdrop-blur-sm">
-                  {t.count} Tour Packages
+                <div className="absolute inset-x-4 bottom-4 rounded-md bg-white/85 px-4 py-2 text-center text-sm text-foreground backdrop-blur-sm font-extrabold">
+                  {typeof t.count === "number" ? `${t.count} Tour Packages` : t.count}
                 </div>
               </article>
             </Reveal>

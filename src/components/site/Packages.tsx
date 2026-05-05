@@ -1,3 +1,5 @@
+import brajCircle from "@/assets/brajmiles-circle.jpeg";
+import brajTemple from "@/assets/braj-temple.jpeg";
 import kashmir from "@/assets/dest-kashmir.jpg";
 import kerala from "@/assets/dest-kerala.jpg";
 import rajasthan from "@/assets/dest-rajasthan.jpg";
@@ -7,7 +9,7 @@ import darjeeling from "@/assets/dest-darjeeling.jpg";
 import { Reveal } from "./Reveal";
 
 const TOURS = [
-  { img: kashmir, title: "Vrindavan Tour", count: "Day-1" },
+  { img: brajTemple, title: "Vrindavan Tour", count: "Day-1" },
   { img: ladakh, title: "Barsana Tour", count: "Day-3" },
   { img: darjeeling, title: "Darjeeling Tour", count: 6 },
   { img: goa, title: "Andaman Tour", count: 4 },
@@ -32,8 +34,8 @@ export function Packages() {
           <Reveal className="lg:row-span-2">
             <article className="relative h-full min-h-[400px] overflow-hidden rounded-2xl shadow-soft">
               <img
-                src={kashmir}
-                alt="Exclusive Tour"
+                src={brajCircle}
+                alt="Braj Map"
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />

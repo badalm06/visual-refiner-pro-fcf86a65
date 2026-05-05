@@ -1,19 +1,21 @@
 import brajCircle from "@/assets/brajmiles-circle.jpeg";
+import day1 from "@/assets/day-1.jpg";
+import day2 from "@/assets/day-2.jpg";
+import day3 from "@/assets/day-3.jpg";
+import day4 from "@/assets/day-4.jpg";
+import day5 from "@/assets/day-5.jpg";
+import day6 from "@/assets/day-6.jpg";
 import braj1 from "@/assets/braj-1.jpeg";
-import braj2 from "@/assets/braj-2.jpeg";
-import braj3 from "@/assets/braj-3.jpeg";
-import braj4 from "@/assets/braj-4.jpeg";
-import braj5 from "@/assets/braj-5.jpeg";
 import { Reveal } from "./Reveal";
 
 const TOURS = [
-  { img: braj1, title: "Vrindavan Tour", count: "Day-1" },
-  { img: braj2, title: "Barsana Tour", count: "Day-3" },
-  { img: braj3, title: "Govardhan Tour", count: "Day-2" },
-  { img: braj4, title: "Mathura Tour", count: "Day-4" },
-  { img: braj5, title: "Nandgaon Tour", count: "Day-5" },
-  { img: braj1, title: "Gokul Tour", count: "Day-6" },
-  { img: braj2, title: "Radha Kund Tour", count: "Day-7" },
+  { img: day1, title: "Vrindavan Tour", count: "Day-1" },
+  { img: day2, title: "Govardhan Tour", count: "Day-2" },
+  { img: day3, title: "Barsana Tour", count: "Day-3" },
+  { img: day4, title: "Mathura Tour", count: "Day-4" },
+  { img: day5, title: "Nandgaon Tour", count: "Day-5" },
+  { img: day6, title: "Gokul Tour", count: "Day-6" },
+  { img: braj1, title: "Radha Kund Tour", count: "Day-7" },
 ];
 
 export function Packages() {

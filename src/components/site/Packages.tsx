@@ -39,7 +39,7 @@ export function Packages() {
               <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
               <div className="relative flex h-full flex-col justify-center p-8 text-white">
                 <div className="font-display text-4xl md:text-5xl">
-                  <em className="not-italic font-serif italic">Exclusive</em> <span className="font-semibold">Tour</span>
+                  <em className="not-italic font-serif italic text-left">We Are Center of 'Braj'</em> <span className="font-semibold">​</span>
                 </div>
                 <div className="mt-4 text-5xl font-bold md:text-6xl">
                   20<span className="text-3xl md:text-4xl">%</span>

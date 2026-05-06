@@ -1,6 +1,6 @@
 import brajCircle from "@/assets/brajmiles-circle.jpeg";
 import day1 from "@/assets/day-1.jpg";
-import day2 from "@/assets/day-2.jpg";
+import day2 from "@/assets/mathura-ghat.jpg";
 import day3 from "@/assets/barsana-temple.jpg";
 import day4 from "@/assets/day-4.jpg";
 import day5 from "@/assets/nandgaon-temple.jpg";

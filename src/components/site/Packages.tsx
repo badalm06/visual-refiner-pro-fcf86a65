@@ -5,7 +5,7 @@ import day3 from "@/assets/day-3.jpg";
 import day4 from "@/assets/day-4.jpg";
 import day5 from "@/assets/taj-mahal.jpg";
 import day6 from "@/assets/day-6.jpg";
-import braj1 from "@/assets/braj-1.jpeg";
+import braj1 from "@/assets/taj-mahal-2.jpg";
 import { Reveal } from "./Reveal";
 
 const TOURS = [

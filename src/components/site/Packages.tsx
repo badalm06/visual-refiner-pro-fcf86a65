@@ -13,7 +13,7 @@ const TOURS = [
   { img: day2, title: "Govardhan Tour", count: "Day-2" },
   { img: day3, title: "Barsana Tour", count: "Day-3" },
   { img: day4, title: "Mathura Tour", count: "Day-4" },
-   { img: day5, title: "Nandgaon Tour", count: "Day-4" },
+  { img: day5, title: "Nandgaon Tour", count: "Day-3" },
    { img: day6, title: "Agra Tour", count: "Day-6" },
   { img: braj1, title: "Agra Tour", count: "Day-3" },
 ];

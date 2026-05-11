@@ -1,16 +1,18 @@
-import dubai from "@/assets/dest-dubai.jpg";
-import thailand from "@/assets/dest-thailand.jpg";
-import kerala from "@/assets/dest-kerala.jpg";
-import ladakh from "@/assets/dest-ladakh.jpg";
-import goa from "@/assets/dest-goa.jpg";
+import vrindavan from "@/assets/circle-vrindavan.jpg";
+import mathura from "@/assets/circle-mathura.jpg";
+import gokul from "@/assets/circle-gokul.jpg";
+import govardhan from "@/assets/circle-govardhan.jpg";
+import nandgaon from "@/assets/circle-nandgaon.jpg";
+import barsana from "@/assets/circle-barsana.jpg";
 import { Reveal } from "./Reveal";
 
 const TOP = [
-  { img: dubai, name: "Dubai", trips: "12 tours" },
-  { img: thailand, name: "Thailand", trips: "9 tours" },
-  { img: kerala, name: "Sri Lanka", trips: "6 tours" },
-  { img: ladakh, name: "Singapore", trips: "8 tours" },
-  { img: goa, name: "Malaysia", trips: "7 tours" },
+  { img: vrindavan, name: "Vrindavan" },
+  { img: mathura, name: "Mathura" },
+  { img: gokul, name: "Gokul" },
+  { img: govardhan, name: "Govardhan" },
+  { img: nandgaon, name: "Nandgaon" },
+  { img: barsana, name: "Barsana" },
 ];
 
 export function Destinations() {
@@ -23,19 +25,11 @@ export function Destinations() {
           <p className="mt-4 text-muted-foreground">Beyond India — curated international getaways.</p>
         </Reveal>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-14 grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
           {TOP.map((d, i) => (
             <Reveal key={d.name} delay={i * 60}>
-              <a href="#" className="img-zoom group relative block aspect-[3/4] overflow-hidden rounded-2xl shadow-soft">
+              <a href="#" className="img-zoom group relative block aspect-square overflow-hidden rounded-full">
                 <img src={d.img} alt={d.name} loading="lazy" className="h-full w-full object-cover" />
-                <div className="absolute inset-0" style={{ background: "var(--gradient-overlay)" }} />
-                <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                  <div className="font-display text-2xl font-bold">{d.name}</div>
-                  <div className="mt-1 text-xs text-white/80">{d.trips}</div>
-                  <div className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-gold opacity-0 transition-opacity group-hover:opacity-100">
-                    Discover →
-                  </div>
-                </div>
               </a>
             </Reveal>
           ))}

@@ -33,6 +33,10 @@ import govardhanRadhaKund from "@/assets/govardhan-radha-kund.jpg";
 
 import nandgaonNandmahal from "@/assets/nandgaon-nandmahal.jpg";
 
+import barsanaRadha from "@/assets/barsana-radha-janmsthan.jpg";
+import barsanaRangili from "@/assets/barsana-rangili-mahal.jpg";
+import barsanaKirti from "@/assets/barsana-kirti-mandir.jpg";
+
 type Temple = { name: string; img: string };
 
 const DATA: Record<string, { name: string; cover: string; description: string; temples: Temple[] }> = {
@@ -91,7 +95,16 @@ const DATA: Record<string, { name: string; cover: string; description: string; t
       { name: "Nandmahal", img: nandgaonNandmahal },
     ],
   },
-  barsana: { name: "Barsana", cover: barsana, description: "The blessed birthplace of Shrimati Radharani.", temples: [] },
+  barsana: {
+    name: "Barsana",
+    cover: barsana,
+    description: "The blessed birthplace of Shrimati Radharani.",
+    temples: [
+      { name: "Shri Radha Janmsthan", img: barsanaRadha },
+      { name: "Rangili Mahal", img: barsanaRangili },
+      { name: "Kirti Mandir", img: barsanaKirti },
+    ],
+  },
 };
 
 export const Route = createFileRoute("/destinations/$slug")({

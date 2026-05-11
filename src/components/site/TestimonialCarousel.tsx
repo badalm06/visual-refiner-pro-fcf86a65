@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowLeft, ArrowRight, Quote, X } from "lucide-react";
+import { Quote, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface iTestimonial {
@@ -10,16 +10,6 @@ export interface iTestimonial {
   designation: string;
   description: string;
   profileImage: string;
-}
-
-interface iCarouselProps {
-  items: React.ReactElement<{
-    testimonial: iTestimonial;
-    index: number;
-    layout?: boolean;
-    onCardClose: () => void;
-  }>[];
-  initialScroll?: number;
 }
 
 const useOutsideClick = (
@@ -40,112 +30,22 @@ const useOutsideClick = (
   }, [ref, onOutsideClick]);
 };
 
-export const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const checkScrollability = () => {
-    if (carouselRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
-    }
-  };
-
-  const handleScrollLeft = () => carouselRef.current?.scrollBy({ left: -320, behavior: "smooth" });
-  const handleScrollRight = () => carouselRef.current?.scrollBy({ left: 320, behavior: "smooth" });
-
-  const handleCardClose = (index: number) => {
-    if (carouselRef.current) {
-      const isMobile = window.innerWidth < 768;
-      const cardWidth = isMobile ? 230 : 320;
-      const gap = isMobile ? 12 : 20;
-      const scrollPosition = (cardWidth + gap) * index;
-      carouselRef.current.scrollTo({ left: scrollPosition, behavior: "smooth" });
-    }
-  };
-
-  useEffect(() => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft = initialScroll;
-      checkScrollability();
-    }
-  }, [initialScroll]);
-
-  return (
-    <div className="relative w-full">
-      <div
-        ref={carouselRef}
-        onScroll={checkScrollability}
-        className="flex w-full overflow-x-scroll scroll-smooth py-6 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-      >
-        <div className="flex gap-5 md:gap-6 px-4 md:px-8">
-          {items.map((item, index) => (
-            <motion.div
-              key={"card" + index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 * index, ease: "easeOut" }}
-              className="last:pr-8"
-            >
-              {React.cloneElement(item, { onCardClose: () => handleCardClose(index) })}
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-2 flex justify-end gap-3 px-4 md:px-8">
-        <button
-          aria-label="Previous"
-          onClick={handleScrollLeft}
-          disabled={!canScrollLeft}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground text-background shadow-soft transition disabled:opacity-30 hover:bg-brand"
-        >
-          <ArrowLeft className="h-5 w-5" />
-        </button>
-        <button
-          aria-label="Next"
-          onClick={handleScrollRight}
-          disabled={!canScrollRight}
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground text-background shadow-soft transition disabled:opacity-30 hover:bg-brand"
-        >
-          <ArrowRight className="h-5 w-5" />
-        </button>
-      </div>
-    </div>
-  );
-};
-
 export const TestimonialCard = ({
   testimonial,
-  index,
-  onCardClose = () => {},
 }: {
   testimonial: iTestimonial;
-  index: number;
-  layout?: boolean;
-  onCardClose?: () => void;
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleExpand = () => setIsExpanded(true);
-  const handleCollapse = () => {
-    setIsExpanded(false);
-    onCardClose();
-  };
+  const handleCollapse = () => setIsExpanded(false);
 
   useEffect(() => {
     const handleEscapeKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") handleCollapse();
     };
-    if (isExpanded) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isExpanded ? "hidden" : "";
     window.addEventListener("keydown", handleEscapeKey);
     return () => window.removeEventListener("keydown", handleEscapeKey);
   }, [isExpanded]);
@@ -204,15 +104,15 @@ export const TestimonialCard = ({
       <button
         onClick={handleExpand}
         className={cn(
-          "group relative flex h-[420px] w-[260px] md:h-[460px] md:w-[320px] flex-col justify-end overflow-hidden rounded-3xl text-left",
+          "group relative flex h-[420px] w-[260px] md:h-[460px] md:w-[320px] shrink-0 flex-col justify-end overflow-hidden rounded-3xl text-left",
           "bg-foreground transition-transform hover:-translate-y-1"
         )}
       >
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-50 transition-opacity group-hover:opacity-70"
+          className="absolute inset-0 bg-cover bg-center opacity-60 transition-opacity group-hover:opacity-80"
           style={{ backgroundImage: `url(${testimonial.profileImage})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/10" />
 
         <div className="relative z-10 p-6 md:p-7">
           <Quote className="h-8 w-8 text-brand" />
@@ -239,5 +139,28 @@ export const TestimonialCard = ({
         </div>
       </button>
     </>
+  );
+};
+
+export const TestimonialMarquee = ({
+  items,
+  duration = 60,
+}: {
+  items: iTestimonial[];
+  duration?: number;
+}) => {
+  const loop = [...items, ...items];
+  return (
+    <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+      <motion.div
+        className="flex gap-5 md:gap-6 w-max py-6"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ duration, repeat: Infinity, ease: "linear" }}
+      >
+        {loop.map((t, i) => (
+          <TestimonialCard key={i} testimonial={t} />
+        ))}
+      </motion.div>
+    </div>
   );
 };

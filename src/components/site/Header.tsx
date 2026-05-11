@@ -48,30 +48,23 @@ export function Header() {
           : "bg-background/60 backdrop-blur-sm"
       }`}
     >
-      <div className="bg-foreground text-background">
-        <div className="container-pro flex h-9 items-center justify-between gap-4 text-xs">
-          <div className="flex items-center gap-5">
-            <a href="tel:+919027674560" className="flex items-center gap-2 transition-colors hover:text-gold">
-              <Phone className="h-3.5 w-3.5" />
-              <span>9027674560</span>
-            </a>
-            <a href="mailto:Brajmiles@gmail.com" className="hidden items-center gap-2 transition-colors hover:text-gold sm:flex">
-              <Mail className="h-3.5 w-3.5" />
-              <span>Brajmiles@gmail.com</span>
-            </a>
+      <div className="bg-foreground text-background overflow-hidden">
+        <div className="flex h-9 items-center whitespace-nowrap text-xs font-semibold tracking-wide">
+          <div className="flex shrink-0 animate-marquee gap-16 pr-16">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <span key={i} className="flex items-center gap-3">
+                <span className="text-gold">✦</span>
+                Welcome to Braj Bhoomi
+              </span>
+            ))}
           </div>
-          <div className="flex items-center gap-2 text-background/80">
-            <a href="https://www.facebook.com/share/1W12CYYc5B/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition-colors hover:text-gold">
-              <Facebook className="h-3.5 w-3.5" />
-            </a>
-            <span className="text-background/30">|</span>
-            <a href="https://www.instagram.com/brajmiles.in?igsh=MXZocmZqczNtaWNzNg%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-colors hover:text-gold">
-              <Instagram className="h-3.5 w-3.5" />
-            </a>
-            <span className="text-background/30">|</span>
-            <a href="https://youtube.com/@manojfojimathura?si=BdxT4eTL04A61s-T" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="transition-colors hover:text-gold">
-              <Youtube className="h-3.5 w-3.5" />
-            </a>
+          <div className="flex shrink-0 animate-marquee gap-16 pr-16" aria-hidden="true">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <span key={i} className="flex items-center gap-3">
+                <span className="text-gold">✦</span>
+                Welcome to Braj Bhoomi
+              </span>
+            ))}
           </div>
         </div>
       </div>

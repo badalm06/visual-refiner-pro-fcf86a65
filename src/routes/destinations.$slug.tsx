@@ -14,10 +14,27 @@ import mathuraVishramGhat from "@/assets/mathura-vishram-ghat.jpg";
 import mathuraBirla from "@/assets/mathura-birla.jpg";
 import mathuraRangeshwar from "@/assets/mathura-rangeshwar.jpg";
 
+import vrindavanPrem from "@/assets/vrindavan-prem-mandir.jpg";
+import vrindavanBanke from "@/assets/vrindavan-banke-bihari.jpg";
+import vrindavanKeli from "@/assets/vrindavan-keli-kunj.jpg";
+import vrindavanNidhivan from "@/assets/vrindavan-nidhivan.jpg";
+import vrindavanChardham from "@/assets/vrindavan-chardham.jpg";
+
 type Temple = { name: string; img: string };
 
 const DATA: Record<string, { name: string; cover: string; description: string; temples: Temple[] }> = {
-  vrindavan: { name: "Vrindavan", cover: vrindavan, description: "Sacred land of Lord Krishna's divine pastimes.", temples: [] },
+  vrindavan: {
+    name: "Vrindavan",
+    cover: vrindavan,
+    description: "Sacred land of Lord Krishna's divine pastimes.",
+    temples: [
+      { name: "Prem Mandir", img: vrindavanPrem },
+      { name: "Banke Bihari Mandir", img: vrindavanBanke },
+      { name: "Keli Kunj", img: vrindavanKeli },
+      { name: "Nidhivan", img: vrindavanNidhivan },
+      { name: "Chardham Mandir", img: vrindavanChardham },
+    ],
+  },
   mathura: {
     name: "Mathura",
     cover: mathura,

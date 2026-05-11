@@ -8,13 +8,32 @@ import barsana from "@/assets/circle-barsana.jpg";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 
-const DATA: Record<string, { name: string; cover: string; description: string }> = {
-  vrindavan: { name: "Vrindavan", cover: vrindavan, description: "Sacred land of Lord Krishna's divine pastimes." },
-  mathura: { name: "Mathura", cover: mathura, description: "The holy birthplace of Lord Krishna." },
-  gokul: { name: "Gokul", cover: gokul, description: "Where Lord Krishna spent his childhood days." },
-  govardhan: { name: "Govardhan", cover: govardhan, description: "The sacred hill lifted by Lord Krishna." },
-  nandgaon: { name: "Nandgaon", cover: nandgaon, description: "Home of Nanda Maharaj, Krishna's foster father." },
-  barsana: { name: "Barsana", cover: barsana, description: "The blessed birthplace of Shrimati Radharani." },
+import mathuraJanmbhumi from "@/assets/mathura-janmbhumi.jpg";
+import mathuraDwarkadhish from "@/assets/mathura-dwarkadhish.jpg";
+import mathuraVishramGhat from "@/assets/mathura-vishram-ghat.jpg";
+import mathuraBirla from "@/assets/mathura-birla.jpg";
+import mathuraRangeshwar from "@/assets/mathura-rangeshwar.jpg";
+
+type Temple = { name: string; img: string };
+
+const DATA: Record<string, { name: string; cover: string; description: string; temples: Temple[] }> = {
+  vrindavan: { name: "Vrindavan", cover: vrindavan, description: "Sacred land of Lord Krishna's divine pastimes.", temples: [] },
+  mathura: {
+    name: "Mathura",
+    cover: mathura,
+    description: "The holy birthplace of Lord Krishna.",
+    temples: [
+      { name: "Shri Krishna Janmbhumi", img: mathuraJanmbhumi },
+      { name: "Dwarkadhish", img: mathuraDwarkadhish },
+      { name: "Vishram Ghat", img: mathuraVishramGhat },
+      { name: "Birla Mandir", img: mathuraBirla },
+      { name: "Rangeshwar Mahadev", img: mathuraRangeshwar },
+    ],
+  },
+  gokul: { name: "Gokul", cover: gokul, description: "Where Lord Krishna spent his childhood days.", temples: [] },
+  govardhan: { name: "Govardhan", cover: govardhan, description: "The sacred hill lifted by Lord Krishna.", temples: [] },
+  nandgaon: { name: "Nandgaon", cover: nandgaon, description: "Home of Nanda Maharaj, Krishna's foster father.", temples: [] },
+  barsana: { name: "Barsana", cover: barsana, description: "The blessed birthplace of Shrimati Radharani.", temples: [] },
 };
 
 export const Route = createFileRoute("/destinations/$slug")({
@@ -57,20 +76,29 @@ function DestinationPage() {
             <div className="mx-auto max-w-2xl text-center">
               <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">Sacred Sites</span>
               <h2 className="mt-3 text-4xl font-bold text-foreground md:text-5xl">Temples of {data.name}</h2>
-              <p className="mt-4 text-muted-foreground">Temple images coming soon — explore the divine sanctuaries of {data.name}.</p>
+              {data.temples.length === 0 && (
+                <p className="mt-4 text-muted-foreground">Temple images coming soon — explore the divine sanctuaries of {data.name}.</p>
+              )}
             </div>
 
-            <div className="mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="aspect-[4/3] rounded-2xl bg-secondary shadow-soft flex items-center justify-center text-muted-foreground animate-fade-in"
-                  style={{ animationDelay: `${i * 80}ms` }}
-                >
-                  <span className="text-sm">Temple image {i + 1}</span>
-                </div>
-              ))}
-            </div>
+            {data.temples.length > 0 && (
+              <div className="mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                {data.temples.map((t, i) => (
+                  <div
+                    key={t.name}
+                    className="group overflow-hidden rounded-2xl bg-secondary shadow-soft animate-fade-in"
+                    style={{ animationDelay: `${i * 80}ms` }}
+                  >
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img src={t.img} alt={t.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div className="p-4 text-center">
+                      <h3 className="text-lg font-semibold text-foreground">{i + 1}. {t.name}</h3>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
 
             <div className="mt-12 text-center">
               <Link to="/" className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-bold text-white hover:bg-brand/90 transition-colors">

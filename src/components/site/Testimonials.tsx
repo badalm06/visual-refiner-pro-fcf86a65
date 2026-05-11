@@ -8,7 +8,7 @@ const TESTIMONIALS: iTestimonial[] = [
     description:
       "Brajmiles ne hamari Vrindavan yatra ko itna spiritual aur comfortable banaya. Banke Bihari darshan se lekar Prem Mandir tak — sab kuch perfectly planned tha.",
     profileImage:
-      "https://images.unsplash.com/photo-1623091410901-00e2d268901f?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?w=600&q=80&auto=format&fit=crop",
   },
   {
     name: "Rakesh Agarwal",
@@ -24,7 +24,7 @@ const TESTIMONIALS: iTestimonial[] = [
     description:
       "Family ke saath Mathura-Vrindavan trip karwaya. Bachchon se lekar bujurgon tak sabka khayal rakha gaya. Har temple mein priority darshan mila.",
     profileImage:
-      "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1623091410901-00e2d268901f?w=600&q=80&auto=format&fit=crop",
   },
   {
     name: "Vikram Singh",
@@ -40,7 +40,7 @@ const TESTIMONIALS: iTestimonial[] = [
     description:
       "Holi ke time Barsana ki Lathmar Holi dekhne ka mauka mila — Brajmiles ne har arrangement bahut achhe se kiye. Unforgettable experience!",
     profileImage:
-      "https://images.unsplash.com/photo-1592621385612-4d7129426394?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1581824283135-0666cf353f35?w=600&q=80&auto=format&fit=crop",
   },
   {
     name: "Mohan Lal Gupta",
@@ -56,7 +56,7 @@ const TESTIMONIALS: iTestimonial[] = [
     description:
       "Gokul ki gallian, Raman Reti ki reti — bachpan ki Krishna kahaniyan jeevit ho gayi. Brajmiles team bahut caring aur professional hai.",
     profileImage:
-      "https://images.unsplash.com/photo-1581824283135-0666cf353f35?w=600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1592621385612-4d7129426394?w=600&q=80&auto=format&fit=crop",
   },
   {
     name: "Amit Joshi",

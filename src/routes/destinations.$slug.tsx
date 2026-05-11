@@ -31,6 +31,8 @@ import govardhanManasi from "@/assets/govardhan-manasi-ganga.jpg";
 import govardhanKusum from "@/assets/govardhan-kusum-sarowar.jpg";
 import govardhanRadhaKund from "@/assets/govardhan-radha-kund.jpg";
 
+import nandgaonNandmahal from "@/assets/nandgaon-nandmahal.jpg";
+
 type Temple = { name: string; img: string };
 
 const DATA: Record<string, { name: string; cover: string; description: string; temples: Temple[] }> = {
@@ -81,7 +83,14 @@ const DATA: Record<string, { name: string; cover: string; description: string; t
       { name: "Radha Kund", img: govardhanRadhaKund },
     ],
   },
-  nandgaon: { name: "Nandgaon", cover: nandgaon, description: "Home of Nanda Maharaj, Krishna's foster father.", temples: [] },
+  nandgaon: {
+    name: "Nandgaon",
+    cover: nandgaon,
+    description: "Home of Nanda Maharaj, Krishna's foster father.",
+    temples: [
+      { name: "Nandmahal", img: nandgaonNandmahal },
+    ],
+  },
   barsana: { name: "Barsana", cover: barsana, description: "The blessed birthplace of Shrimati Radharani.", temples: [] },
 };
 

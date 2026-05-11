@@ -6,6 +6,7 @@ import { Packages } from "@/components/site/Packages";
 import { Destinations } from "@/components/site/Destinations";
 import { ExploreBanner } from "@/components/site/ExploreBanner";
 import { Inclusions } from "@/components/site/Inclusions";
+import { Testimonials } from "@/components/site/Testimonials";
 import { Newsletter } from "@/components/site/Newsletter";
 import { Footer } from "@/components/site/Footer";
 
@@ -32,6 +33,7 @@ function Index() {
         <Destinations />
         <ExploreBanner />
         <Inclusions />
+        <Testimonials />
         <Newsletter />
       </main>
       <Footer />

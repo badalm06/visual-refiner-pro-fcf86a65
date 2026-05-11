@@ -10,9 +10,9 @@ export function ExploreBanner() {
 
       <div className="container-pro py-24 md:py-32">
         <Reveal className="max-w-2xl text-white">
-          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Explore India</span>
+          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Explore Braj</span>
           <h2 className="mt-3 font-display text-4xl font-bold text-balance md:text-6xl">
-            Explore India &amp; international destinations with us
+            Explore Braj
           </h2>
           <p className="mt-5 text-white/85">
             From the Himalayas to the backwaters and beyond — we craft journeys that match

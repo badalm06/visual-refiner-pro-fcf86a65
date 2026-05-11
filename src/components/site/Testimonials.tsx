@@ -1,73 +1,82 @@
-import { TestimonialsColumn, type Testimonial } from "./TestimonialsColumn";
+import { Carousel, TestimonialCard, type iTestimonial } from "./TestimonialCarousel";
 import { Reveal } from "./Reveal";
 
-const testimonials: Testimonial[] = [
+const TESTIMONIALS: iTestimonial[] = [
   {
-    text: "Brajmiles ne hamari Vrindavan yatra ko itna spiritual aur comfortable banaya. Banke Bihari darshan se lekar Prem Mandir tak — sab kuch perfectly planned tha.",
-    image: "https://i.pravatar.cc/80?img=47",
     name: "Anjali Sharma",
-    role: "Pilgrim, Delhi",
+    designation: "Pilgrim, Delhi",
+    description:
+      "Brajmiles ne hamari Vrindavan yatra ko itna spiritual aur comfortable banaya. Banke Bihari darshan se lekar Prem Mandir tak — sab kuch perfectly planned tha. Guide bahut knowledgeable the.",
+    profileImage: "https://i.pravatar.cc/400?img=47",
   },
   {
-    text: "Govardhan parikrama ka anubhav jeevan bhar yaad rahega. Guide bahut knowledgeable the aur hotel ekdam mandir ke paas. Highly recommended!",
-    image: "https://i.pravatar.cc/80?img=12",
     name: "Rakesh Agarwal",
-    role: "Devotee, Mumbai",
+    designation: "Devotee, Mumbai",
+    description:
+      "Govardhan parikrama ka anubhav jeevan bhar yaad rahega. Hotel ekdam mandir ke paas tha aur bhojan shudh sattvik. Highly recommended for spiritual travelers!",
+    profileImage: "https://i.pravatar.cc/400?img=12",
   },
   {
-    text: "Family ke saath Mathura-Vrindavan trip karwaya. Bachchon se lekar bujurgon tak sabka khayal rakha gaya. Bhojan bhi shudh sattvik tha.",
-    image: "https://i.pravatar.cc/80?img=32",
     name: "Sunita Verma",
-    role: "Family Traveler, Jaipur",
+    designation: "Family Traveler, Jaipur",
+    description:
+      "Family ke saath Mathura-Vrindavan trip karwaya. Bachchon se lekar bujurgon tak sabka khayal rakha gaya. Sab arrangements top-class the, har temple mein priority darshan mila.",
+    profileImage: "https://i.pravatar.cc/400?img=32",
   },
   {
-    text: "Barsana aur Nandgaon ki yatra ne dil chhoo liya. Radha Rani ke darbar mein jo shanti mili, woh shabdon mein bayan nahi kar sakte. Thank you Brajmiles!",
-    image: "https://i.pravatar.cc/80?img=68",
     name: "Vikram Singh",
-    role: "Bhakt, Lucknow",
+    designation: "Bhakt, Lucknow",
+    description:
+      "Barsana aur Nandgaon ki yatra ne dil chhoo liya. Radha Rani ke darbar mein jo shanti mili, woh shabdon mein bayan nahi kar sakte. Thank you Brajmiles team!",
+    profileImage: "https://i.pravatar.cc/400?img=68",
   },
   {
-    text: "Holi ke time Barsana ki Lathmar Holi dekhne ka mauka mila — Brajmiles ne sab arrangements bahut achhe se kiye. Unforgettable experience!",
-    image: "https://i.pravatar.cc/80?img=24",
     name: "Priya Mehta",
-    role: "Cultural Traveler, Pune",
+    designation: "Cultural Traveler, Pune",
+    description:
+      "Holi ke time Barsana ki Lathmar Holi dekhne ka mauka mila — Brajmiles ne har arrangement bahut achhe se kiye. Unforgettable experience, zaroor phir jayenge!",
+    profileImage: "https://i.pravatar.cc/400?img=24",
   },
   {
-    text: "Senior citizens ke liye perfect tour. AC vehicle, comfortable hotel aur har temple mein priority darshan. Bahut bahut dhanyawad!",
-    image: "https://i.pravatar.cc/80?img=15",
     name: "Mohan Lal Gupta",
-    role: "Retired, Kanpur",
+    designation: "Retired, Kanpur",
+    description:
+      "Senior citizens ke liye perfect tour. AC vehicle, comfortable hotel aur har temple mein priority darshan. Bahut bahut dhanyawad Brajmiles ki poori team ko!",
+    profileImage: "https://i.pravatar.cc/400?img=15",
   },
   {
-    text: "Gokul ki gallian, Raman Reti ki reti — bachpan ki Krishna kahaniyan jeevit ho gayi. Brajmiles team bahut caring hai.",
-    image: "https://i.pravatar.cc/80?img=45",
     name: "Neha Kapoor",
-    role: "Spiritual Seeker, Chandigarh",
+    designation: "Spiritual Seeker, Chandigarh",
+    description:
+      "Gokul ki gallian, Raman Reti ki reti — bachpan ki Krishna kahaniyan jeevit ho gayi. Brajmiles team bahut caring aur professional hai.",
+    profileImage: "https://i.pravatar.cc/400?img=45",
   },
   {
-    text: "3 din ka short trip plan kiya tha — har minute worth it tha. Pricing bhi transparent, koi hidden charges nahi.",
-    image: "https://i.pravatar.cc/80?img=51",
     name: "Amit Joshi",
-    role: "Solo Traveler, Ahmedabad",
+    designation: "Solo Traveler, Ahmedabad",
+    description:
+      "3 din ka short trip plan kiya tha — har minute worth it tha. Pricing bhi transparent thi, koi hidden charges nahi. Solo travelers ke liye perfect.",
+    profileImage: "https://i.pravatar.cc/400?img=51",
   },
   {
-    text: "ISKCON Vrindavan ka mangal aarti aur Nidhivan ka rahasya — Brajmiles ke saath har anubhav divya tha. Phir zaroor jayenge.",
-    image: "https://i.pravatar.cc/80?img=39",
     name: "Kavita Iyer",
-    role: "Devotee, Bangalore",
+    designation: "Devotee, Bangalore",
+    description:
+      "ISKCON Vrindavan ka mangal aarti aur Nidhivan ka rahasya — Brajmiles ke saath har anubhav divya tha. Phir zaroor jayenge family ke saath.",
+    profileImage: "https://i.pravatar.cc/400?img=39",
   },
 ];
 
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
-
 export function Testimonials() {
+  const cards = TESTIMONIALS.map((t, i) => (
+    <TestimonialCard key={t.name} testimonial={t} index={i} />
+  ));
+
   return (
-    <section className="bg-background py-20 md:py-28 relative overflow-hidden">
-      <div className="container-pro z-10">
-        <Reveal className="flex flex-col items-center justify-center max-w-2xl mx-auto text-center">
-          <span className="border border-border py-1 px-4 rounded-full text-xs font-semibold uppercase tracking-[0.22em] text-brand">
+    <section className="bg-background py-20 md:py-28">
+      <div className="container-pro">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <span className="inline-block rounded-full border border-border px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand">
             Testimonials
           </span>
           <h2 className="mt-5 text-4xl font-bold text-foreground md:text-5xl">
@@ -77,12 +86,10 @@ export function Testimonials() {
             Real stories from devotees who experienced Braj with us.
           </p>
         </Reveal>
+      </div>
 
-        <div className="flex justify-center gap-6 mt-14 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[640px] overflow-hidden">
-          <TestimonialsColumn testimonials={firstColumn} duration={18} />
-          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={22} />
-          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={20} />
-        </div>
+      <div className="mt-10">
+        <Carousel items={cards} />
       </div>
     </section>
   );

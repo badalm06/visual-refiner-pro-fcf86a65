@@ -30,6 +30,11 @@ export function Destinations() {
             <Reveal key={d.name} delay={i * 60}>
               <a href="#" className="img-zoom group relative block aspect-square overflow-hidden rounded-full">
                 <img src={d.img} alt={d.name} loading="lazy" className="h-full w-full object-cover" />
+                <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-gold">
+                    Discover →
+                  </span>
+                </div>
               </a>
             </Reveal>
           ))}

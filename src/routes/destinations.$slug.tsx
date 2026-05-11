@@ -31,6 +31,8 @@ import govardhanManasi from "@/assets/govardhan-manasi-ganga.jpg";
 import govardhanKusum from "@/assets/govardhan-kusum-sarowar.jpg";
 import govardhanRadhaKund from "@/assets/govardhan-radha-kund.jpg";
 
+import nandgaonNandmahal from "@/assets/nandgaon-nandmahal.jpg";
+
 type Temple = { name: string; img: string };
 
 const DATA: Record<string, { name: string; cover: string; description: string; temples: Temple[] }> = {

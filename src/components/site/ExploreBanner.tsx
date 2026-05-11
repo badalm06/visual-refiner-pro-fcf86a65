@@ -15,8 +15,8 @@ export function ExploreBanner() {
             Explore Braj
           </h2>
           <p className="mt-5 text-white/85">
-            From the Himalayas to the backwaters and beyond — we craft journeys that match
-            your pace, taste and budget. Talk to our travel designers today.
+            From Vrindavan to Govardhan and beyond — we craft spiritual journeys that match
+            your devotion, comfort and budget. Talk to our travel designers today.
           </p>
           <a href="#contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand shadow-card transition-transform hover:-translate-y-0.5">
             Start planning <ArrowRight className="h-4 w-4" />

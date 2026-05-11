@@ -26,6 +26,11 @@ import gokulYogmaya from "@/assets/gokul-yogmaya.jpg";
 import gokulChintaharan from "@/assets/gokul-chintaharan.jpg";
 import gokulGaushala from "@/assets/gokul-gaushala.jpg";
 
+import govardhanDanghati from "@/assets/govardhan-danghati.jpg";
+import govardhanManasi from "@/assets/govardhan-manasi-ganga.jpg";
+import govardhanKusum from "@/assets/govardhan-kusum-sarowar.jpg";
+import govardhanRadhaKund from "@/assets/govardhan-radha-kund.jpg";
+
 type Temple = { name: string; img: string };
 
 const DATA: Record<string, { name: string; cover: string; description: string; temples: Temple[] }> = {
@@ -65,7 +70,17 @@ const DATA: Record<string, { name: string; cover: string; description: string; t
       { name: "Gaushala", img: gokulGaushala },
     ],
   },
-  govardhan: { name: "Govardhan", cover: govardhan, description: "The sacred hill lifted by Lord Krishna.", temples: [] },
+  govardhan: {
+    name: "Govardhan",
+    cover: govardhan,
+    description: "The sacred hill lifted by Lord Krishna.",
+    temples: [
+      { name: "Danghati Mandir", img: govardhanDanghati },
+      { name: "Manasi Ganga", img: govardhanManasi },
+      { name: "Kusum Sarowar", img: govardhanKusum },
+      { name: "Radha Kund", img: govardhanRadhaKund },
+    ],
+  },
   nandgaon: { name: "Nandgaon", cover: nandgaon, description: "Home of Nanda Maharaj, Krishna's foster father.", temples: [] },
   barsana: { name: "Barsana", cover: barsana, description: "The blessed birthplace of Shrimati Radharani.", temples: [] },
 };

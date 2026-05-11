@@ -20,6 +20,12 @@ import vrindavanKeli from "@/assets/vrindavan-keli-kunj.jpg";
 import vrindavanNidhivan from "@/assets/vrindavan-nidhivan.jpg";
 import vrindavanChardham from "@/assets/vrindavan-chardham.jpg";
 
+import gokulRaman from "@/assets/gokul-raman-reti.jpg";
+import gokulBrahmand from "@/assets/gokul-brahmand-ghat.jpg";
+import gokulYogmaya from "@/assets/gokul-yogmaya.jpg";
+import gokulChintaharan from "@/assets/gokul-chintaharan.jpg";
+import gokulGaushala from "@/assets/gokul-gaushala.jpg";
+
 type Temple = { name: string; img: string };
 
 const DATA: Record<string, { name: string; cover: string; description: string; temples: Temple[] }> = {
@@ -47,7 +53,18 @@ const DATA: Record<string, { name: string; cover: string; description: string; t
       { name: "Rangeshwar Mahadev", img: mathuraRangeshwar },
     ],
   },
-  gokul: { name: "Gokul", cover: gokul, description: "Where Lord Krishna spent his childhood days.", temples: [] },
+  gokul: {
+    name: "Gokul",
+    cover: gokul,
+    description: "Where Lord Krishna spent his childhood days.",
+    temples: [
+      { name: "Raman Reti", img: gokulRaman },
+      { name: "Brahmand Ghat", img: gokulBrahmand },
+      { name: "Yogmaya Mandir", img: gokulYogmaya },
+      { name: "Chintaharan Mahadev", img: gokulChintaharan },
+      { name: "Gaushala", img: gokulGaushala },
+    ],
+  },
   govardhan: { name: "Govardhan", cover: govardhan, description: "The sacred hill lifted by Lord Krishna.", temples: [] },
   nandgaon: { name: "Nandgaon", cover: nandgaon, description: "Home of Nanda Maharaj, Krishna's foster father.", temples: [] },
   barsana: { name: "Barsana", cover: barsana, description: "The blessed birthplace of Shrimati Radharani.", temples: [] },

@@ -134,6 +134,13 @@
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
+  .animate-marquee {
+    animation: marquee-loop 25s linear infinite;
+  }
+  @keyframes marquee-loop {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
 
   /* 3D animated icon tile */
   .icon-3d {

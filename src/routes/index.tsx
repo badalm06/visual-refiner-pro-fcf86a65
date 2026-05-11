@@ -7,6 +7,7 @@ import { Destinations } from "@/components/site/Destinations";
 import { ExploreBanner } from "@/components/site/ExploreBanner";
 import { Inclusions } from "@/components/site/Inclusions";
 import { Testimonials } from "@/components/site/Testimonials";
+import { Blog } from "@/components/site/Blog";
 import { Newsletter } from "@/components/site/Newsletter";
 import { Footer } from "@/components/site/Footer";
 
@@ -34,6 +35,7 @@ function Index() {
         <ExploreBanner />
         <Inclusions />
         <Testimonials />
+        <Blog />
         <Newsletter />
       </main>
       <Footer />

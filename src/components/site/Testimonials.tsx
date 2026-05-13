@@ -64,7 +64,7 @@ const thirdColumn = testimonials.slice(6, 9);
 
 export function Testimonials() {
   return (
-    <section className="bg-background py-20 md:py-28 relative overflow-hidden">
+  <section id="testimonials" className="bg-background py-20 md:py-28 relative overflow-hidden">
       <div className="container-pro z-10">
         <Reveal className="flex flex-col items-center justify-center max-w-2xl mx-auto text-center">
           <span className="border border-border py-1 px-4 rounded-full text-xs font-semibold uppercase tracking-[0.22em] text-brand">

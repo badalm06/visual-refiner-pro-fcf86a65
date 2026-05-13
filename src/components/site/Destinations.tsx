@@ -18,7 +18,7 @@ const TOP = [
 
 export function Destinations() {
   return (
-    <section className="py-20 md:py-28">
+    <section id="destinations" className="py-20 md:py-28">
       <div className="container-pro">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">Explore the world</span>

@@ -1,16 +1,20 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Facebook, Instagram, Mail, Menu, Phone, Youtube, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import logo from "@/assets/brajmiles-logo.png";
 
 const NAV = [
-  { label: "Home", to: "/" },
-  { label: "Packages", to: "/packages" },
-  { label: "Destinations", to: "/destinations" },
-  { label: "Services", to: "/services" },
-  { label: "About", to: "/about" },
-  { label: "Contact", to: "/contact" },
+  { label: "Home", href: "/#top" },
+  { label: "Packages", href: "/#packages" },
+  { label: "Destinations", href: "/#destinations" },
+  { label: "Services", href: "/#services" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
+
+const PHONE_DISPLAY = "+91 90276 74560";
+const PHONE_TEL = "tel:+919027674560";
+const WHATSAPP_URL = "https://wa.me/919027674560";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -90,30 +94,40 @@ export function Header() {
             }`}
           >
             {NAV.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
+              <a
+                key={n.href}
+                href={n.href}
                 className={`whitespace-nowrap font-medium text-foreground transition-colors hover:text-brand ${
                   compact ? "text-xs" : "text-sm"
                 }`}
-                activeProps={{ className: "text-brand" }}
               >
                 {n.label}
-              </Link>
+              </a>
             ))}
           </nav>
         )}
 
         {!collapsed && (
-          <div className="flex shrink-0 items-center gap-3">
+          <div className="flex shrink-0 items-center gap-2">
             <a
-              href="tel:+917552421243"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand text-brand-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+            >
+              <svg viewBox="0 0 32 32" className="h-5 w-5" fill="currentColor" aria-hidden="true">
+                <path d="M19.11 17.27c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.83-2.01-.22-.53-.45-.46-.61-.46-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.55.58.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.02 5.33c-5.89 0-10.67 4.78-10.67 10.67 0 1.88.49 3.71 1.43 5.33L5.33 26.67l5.5-1.43a10.65 10.65 0 0 0 5.19 1.34h.01c5.88 0 10.66-4.78 10.66-10.67 0-2.85-1.11-5.53-3.12-7.55a10.6 10.6 0 0 0-7.55-3.13zm6.34 17.01a8.84 8.84 0 0 1-6.34 2.62h-.01a8.85 8.85 0 0 1-4.51-1.24l-.32-.19-3.27.85.87-3.18-.21-.33a8.85 8.85 0 0 1-1.36-4.71c0-4.9 3.99-8.88 8.89-8.88 2.37 0 4.6.93 6.28 2.61a8.82 8.82 0 0 1 2.6 6.28c-.01 4.9-4 8.88-8.92 8.88z"/>
+              </svg>
+            </a>
+            <a
+              href={PHONE_TEL}
               className={`inline-flex items-center gap-2 rounded-full bg-gradient-brand font-semibold text-brand-foreground shadow-soft transition-transform hover:-translate-y-0.5 ${
                 compact ? "px-3 py-2 text-xs" : "px-5 py-2.5 text-sm"
               }`}
             >
               <Phone className="h-4 w-4" />
-              {!compact && <span>+91 75524 21243</span>}
+              {!compact && <span>{PHONE_DISPLAY}</span>}
             </a>
           </div>
         )}
@@ -133,21 +147,34 @@ export function Header() {
         <div className="border-t border-border bg-background/95 backdrop-blur">
           <div className="container-pro flex flex-col gap-1 py-4">
             {NAV.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
+              <a
+                key={n.href}
+                href={n.href}
                 onClick={() => setOpen(false)}
                 className="rounded-md px-3 py-2.5 text-sm font-medium text-foreground hover:bg-accent"
               >
                 {n.label}
-              </Link>
+              </a>
             ))}
-            <a
-              href="tel:+917552421243"
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand px-5 py-3 text-sm font-semibold text-brand-foreground"
-            >
-              <Phone className="h-4 w-4" /> +91 75524 21243
-            </a>
+            <div className="mt-2 flex gap-2">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-brand bg-background px-5 py-3 text-sm font-semibold text-brand"
+              >
+                <svg viewBox="0 0 32 32" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                  <path d="M19.11 17.27c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.83-2.01-.22-.53-.45-.46-.61-.46-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.55.58.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.02 5.33c-5.89 0-10.67 4.78-10.67 10.67 0 1.88.49 3.71 1.43 5.33L5.33 26.67l5.5-1.43a10.65 10.65 0 0 0 5.19 1.34h.01c5.88 0 10.66-4.78 10.66-10.67 0-2.85-1.11-5.53-3.12-7.55a10.6 10.6 0 0 0-7.55-3.13zm6.34 17.01a8.84 8.84 0 0 1-6.34 2.62h-.01a8.85 8.85 0 0 1-4.51-1.24l-.32-.19-3.27.85.87-3.18-.21-.33a8.85 8.85 0 0 1-1.36-4.71c0-4.9 3.99-8.88 8.89-8.88 2.37 0 4.6.93 6.28 2.61a8.82 8.82 0 0 1 2.6 6.28c-.01 4.9-4 8.88-8.92 8.88z"/>
+                </svg>
+                WhatsApp
+              </a>
+              <a
+                href={PHONE_TEL}
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-brand px-5 py-3 text-sm font-semibold text-brand-foreground"
+              >
+                <Phone className="h-4 w-4" /> Call
+              </a>
+            </div>
           </div>
         </div>
       )}

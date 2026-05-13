@@ -3,18 +3,19 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, Phone, X } from "lucide-react";
 import logo from "@/assets/brajmiles-logo.png";
 
+const WHATSAPP_URL = "https://wa.me/919027674560";
+
 const NAV = [
   { label: "Home", href: "/#top" },
   { label: "Packages", href: "/#packages" },
   { label: "Destinations", href: "/#destinations" },
   { label: "Services", href: "/#services" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Contact", href: WHATSAPP_URL, external: true },
 ];
 
 const PHONE_DISPLAY = "+91 90276 74560";
 const PHONE_TEL = "tel:+919027674560";
-const WHATSAPP_URL = "https://wa.me/919027674560";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);

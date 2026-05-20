@@ -11,14 +11,6 @@ import { Newsletter } from "@/components/site/Newsletter";
 import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Travel India Tourism — India Tour Packages, Dubai & South Asia Holidays" },
-      { name: "description", content: "Book curated India tour packages, Dubai holidays & South Asia trips with Travel India Tourism. 20+ years of expertise crafting all-inclusive journeys." },
-      { property: "og:title", content: "Travel India Tourism — Discover Incredible India" },
-      { property: "og:description", content: "Tailor-made tours, all-inclusive holidays and unforgettable journeys across India, Dubai & South Asia." },
-    ],
-  }),
   component: Index,
 });
 

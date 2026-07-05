@@ -8,42 +8,12 @@ import barsana from "@/assets/circle-barsana.jpg";
 import { Reveal } from "./Reveal";
 
 const TOP = [
-  {
-    img: vrindavan,
-    name: "Vrindavan",
-    slug: "vrindavan",
-    desc: "Sacred land of Krishna's divine pastimes — Banke Bihari, Prem Mandir & Nidhivan.",
-  },
-  {
-    img: mathura,
-    name: "Mathura",
-    slug: "mathura",
-    desc: "The holy birthplace of Lord Krishna — Shri Krishna Janmbhumi & Vishram Ghat.",
-  },
-  {
-    img: gokul,
-    name: "Gokul",
-    slug: "gokul",
-    desc: "Where Krishna spent his blessed childhood — Raman Reti & Brahmand Ghat.",
-  },
-  {
-    img: govardhan,
-    name: "Govardhan",
-    slug: "govardhan",
-    desc: "The sacred hill lifted by Lord Krishna — Govardhan Parikrama & Radha Kund.",
-  },
-  {
-    img: nandgaon,
-    name: "Nandgaon",
-    slug: "nandgaon",
-    desc: "Home of Nanda Maharaj, Krishna's foster father — Nandmahal & Lathmar Holi.",
-  },
-  {
-    img: barsana,
-    name: "Barsana",
-    slug: "barsana",
-    desc: "Blessed birthplace of Shrimati Radharani — Radha Rani temple & Kirti Mandir.",
-  },
+  { img: vrindavan, name: "Vrindavan", slug: "vrindavan", desc: "Sacred land of Krishna's divine pastimes — Banke Bihari, Prem Mandir & Nidhivan." },
+  { img: mathura,   name: "Mathura",   slug: "mathura",   desc: "The holy birthplace of Lord Krishna — Shri Krishna Janmbhumi & Vishram Ghat." },
+  { img: gokul,     name: "Gokul",     slug: "gokul",     desc: "Where Krishna spent his blessed childhood — Raman Reti & Brahmand Ghat." },
+  { img: govardhan, name: "Govardhan", slug: "govardhan", desc: "The sacred hill lifted by Lord Krishna — Govardhan Parikrama & Radha Kund." },
+  { img: nandgaon,  name: "Nandgaon",  slug: "nandgaon",  desc: "Home of Nanda Maharaj, Krishna's foster father — Nandmahal & Lathmar Holi." },
+  { img: barsana,   name: "Barsana",   slug: "barsana",   desc: "Blessed birthplace of Shrimati Radharani — Radha Rani temple & Kirti Mandir." },
 ];
 
 export function Destinations() {
@@ -51,13 +21,8 @@ export function Destinations() {
     <section id="destinations" className="py-20 md:py-28" aria-labelledby="destinations-heading">
       <div className="container-pro">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
-            Braj Dham
-          </span>
-          <h2
-            id="destinations-heading"
-            className="mt-3 text-4xl font-bold text-foreground md:text-5xl"
-          >
+          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">Braj Dham</span>
+          <h2 id="destinations-heading" className="mt-3 text-4xl font-bold text-foreground md:text-5xl">
             Sacred Braj Destinations
           </h2>
           <p className="mt-4 text-muted-foreground">
@@ -67,7 +32,7 @@ export function Destinations() {
           </p>
         </Reveal>
 
-        {/* Desktop: 6-column circles */}
+        {/* Desktop: 6-column circles with labels */}
         <div className="mt-14 hidden gap-5 sm:grid sm:grid-cols-3 lg:grid-cols-6">
           {TOP.map((d, i) => (
             <Reveal key={d.name} delay={i * 60}>
@@ -76,7 +41,7 @@ export function Destinations() {
                   to="/destinations/$slug"
                   params={{ slug: d.slug }}
                   className="img-zoom group relative block aspect-square w-full overflow-hidden rounded-full transition-transform duration-300 hover:scale-105"
-                  aria-label={`Explore ${d.name} — ${d.desc}`}
+                  aria-label={`Explore ${d.name}`}
                 >
                   <img
                     src={d.img}
@@ -99,7 +64,7 @@ export function Destinations() {
           ))}
         </div>
 
-        {/* Mobile: 2-column with names visible */}
+        {/* Mobile: 2-column cards with name overlay */}
         <div className="mt-10 grid grid-cols-2 gap-4 sm:hidden">
           {TOP.map((d, i) => (
             <Reveal key={d.name} delay={i * 60}>
@@ -126,7 +91,7 @@ export function Destinations() {
           ))}
         </div>
 
-        {/* Keyword-rich descriptive text for SEO — hidden visually on small screens */}
+        {/* SEO keyword paragraph */}
         <Reveal className="mt-16 rounded-2xl bg-secondary p-6 md:p-8">
           <p className="text-center text-sm leading-relaxed text-muted-foreground md:text-base">
             <strong className="text-foreground">Braj Miles</strong> is your trusted partner for

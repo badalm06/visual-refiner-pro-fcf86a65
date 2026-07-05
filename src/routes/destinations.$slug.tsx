@@ -39,77 +39,63 @@ import barsanaKirti from "@/assets/barsana-kirti-mandir.jpg";
 
 type Temple = { name: string; img: string; desc?: string };
 
-const DATA: Record<
-  string,
-  {
-    name: string;
-    cover: string;
-    description: string;
-    longDesc: string;
-    temples: Temple[];
-  }
-> = {
+const DATA: Record<string, { name: string; cover: string; description: string; longDesc: string; temples: Temple[] }> = {
   vrindavan: {
     name: "Vrindavan",
     cover: vrindavan,
     description: "Sacred land of Lord Krishna's divine pastimes.",
-    longDesc:
-      "Vrindavan is one of the most sacred towns in India, situated on the banks of the Yamuna river in Mathura district, Uttar Pradesh. It is here that Lord Krishna performed his divine childhood leelas — from Rasa Lila to Kaliya Daman. Braj Miles curates immersive Vrindavan tour packages that take you to Banke Bihari Mandir, Prem Mandir, Nidhivan, ISKCON Vrindavan and more. Experience the mangal aarti at dawn and lose yourself in the devotional atmosphere of Braj Bhoomi.",
+    longDesc: "Vrindavan is one of the most sacred towns in India, situated on the banks of the Yamuna river in Mathura district, Uttar Pradesh. It is here that Lord Krishna performed his divine childhood leelas — from Rasa Lila to Kaliya Daman. Braj Miles curates immersive Vrindavan tour packages that take you to Banke Bihari Mandir, Prem Mandir, Nidhivan, ISKCON Vrindavan and more. Experience the mangal aarti at dawn and lose yourself in the devotional atmosphere of Braj Bhoomi.",
     temples: [
-      { name: "Prem Mandir", img: vrindavanPrem, desc: "A grand marble temple of divine love" },
-      { name: "Banke Bihari Mandir", img: vrindavanBanke, desc: "The most beloved Krishna temple in Vrindavan" },
-      { name: "Keli Kunj", img: vrindavanKeli, desc: "Sacred grove of Krishna's pastimes" },
-      { name: "Nidhivan", img: vrindavanNidhivan, desc: "Mysterious forest of the eternal Rasa Lila" },
-      { name: "Chardham Mandir", img: vrindavanChardham, desc: "Visit all four dhams in one place" },
+      { name: "Prem Mandir",        img: vrindavanPrem,    desc: "A grand marble temple of divine love" },
+      { name: "Banke Bihari Mandir", img: vrindavanBanke,  desc: "The most beloved Krishna temple in Vrindavan" },
+      { name: "Keli Kunj",           img: vrindavanKeli,   desc: "Sacred grove of Krishna's pastimes" },
+      { name: "Nidhivan",            img: vrindavanNidhivan, desc: "Mysterious forest of the eternal Rasa Lila" },
+      { name: "Chardham Mandir",     img: vrindavanChardham, desc: "Visit all four dhams in one place" },
     ],
   },
   mathura: {
     name: "Mathura",
     cover: mathura,
     description: "The holy birthplace of Lord Krishna.",
-    longDesc:
-      "Mathura is the holiest city in Braj Mandal and the birthplace of Lord Krishna. Located on the sacred Yamuna river, Mathura is home to Shri Krishna Janmbhumi — the exact spot where Lord Krishna was born. Braj Miles' Mathura darshan packages cover all major temples and ghats, including Vishram Ghat where Krishna rested after slaying Kansa, Dwarkadhish Mandir, and Birla Mandir. A Mathura tour with Braj Miles is a complete spiritual experience for devotees of all ages.",
+    longDesc: "Mathura is the holiest city in Braj Mandal and the birthplace of Lord Krishna. Located on the sacred Yamuna river, Mathura is home to Shri Krishna Janmbhumi — the exact spot where Lord Krishna was born. Braj Miles' Mathura darshan packages cover all major temples and ghats, including Vishram Ghat where Krishna rested after slaying Kansa, Dwarkadhish Mandir, and Birla Mandir. A Mathura tour with Braj Miles is a complete spiritual experience for devotees of all ages.",
     temples: [
-      { name: "Shri Krishna Janmbhumi", img: mathuraJanmbhumi, desc: "The sacred birthplace of Lord Krishna" },
-      { name: "Dwarkadhish Temple", img: mathuraDwarkadhish, desc: "Magnificent temple of Lord Dwarkadhish" },
-      { name: "Vishram Ghat", img: mathuraVishramGhat, desc: "Where Krishna rested after slaying Kansa" },
-      { name: "Birla Mandir", img: mathuraBirla, desc: "A beautifully carved modern temple" },
-      { name: "Rangeshwar Mahadev", img: mathuraRangeshwar, desc: "Ancient Shiva temple in Mathura" },
+      { name: "Shri Krishna Janmbhumi", img: mathuraJanmbhumi,    desc: "The sacred birthplace of Lord Krishna" },
+      { name: "Dwarkadhish Temple",      img: mathuraDwarkadhish,  desc: "Magnificent temple of Lord Dwarkadhish" },
+      { name: "Vishram Ghat",            img: mathuraVishramGhat,  desc: "Where Krishna rested after slaying Kansa" },
+      { name: "Birla Mandir",            img: mathuraBirla,        desc: "A beautifully carved modern temple" },
+      { name: "Rangeshwar Mahadev",      img: mathuraRangeshwar,   desc: "Ancient Shiva temple in Mathura" },
     ],
   },
   gokul: {
     name: "Gokul",
     cover: gokul,
     description: "Where Lord Krishna spent his blessed childhood days.",
-    longDesc:
-      "Gokul is the sacred village where Nanda Maharaj and Yashoda Maiya raised infant Krishna after he was secretly brought from Mathura. Walking through the lanes of Gokul with Braj Miles, you relive the stories of Krishna's early childhood — from Putana Moksha to the lifting of Govardhan. The holy Raman Reti sand, Brahmand Ghat where Krishna revealed his cosmic form, and Yogmaya Mandir are key highlights of a Gokul yatra.",
+    longDesc: "Gokul is the sacred village where Nanda Maharaj and Yashoda Maiya raised infant Krishna after he was secretly brought from Mathura. Walking through the lanes of Gokul with Braj Miles, you relive the stories of Krishna's early childhood — from Putana Moksha to the lifting of Govardhan. The holy Raman Reti sand, Brahmand Ghat where Krishna revealed his cosmic form, and Yogmaya Mandir are key highlights of a Gokul yatra.",
     temples: [
-      { name: "Raman Reti", img: gokulRaman, desc: "Sacred sand where Krishna played as a child" },
-      { name: "Brahmand Ghat", img: gokulBrahmand, desc: "Where Krishna showed Yashoda the universe" },
-      { name: "Yogmaya Mandir", img: gokulYogmaya, desc: "Temple of the divine illusion goddess" },
+      { name: "Raman Reti",          img: gokulRaman,       desc: "Sacred sand where Krishna played as a child" },
+      { name: "Brahmand Ghat",       img: gokulBrahmand,    desc: "Where Krishna showed Yashoda the universe" },
+      { name: "Yogmaya Mandir",      img: gokulYogmaya,     desc: "Temple of the divine illusion goddess" },
       { name: "Chintaharan Mahadev", img: gokulChintaharan, desc: "Shiva temple that removes all worries" },
-      { name: "Gaushala", img: gokulGaushala, desc: "Ancient cow sanctuary of Gokul" },
+      { name: "Gaushala",            img: gokulGaushala,    desc: "Ancient cow sanctuary of Gokul" },
     ],
   },
   govardhan: {
     name: "Govardhan",
     cover: govardhan,
     description: "The sacred hill lifted by Lord Krishna.",
-    longDesc:
-      "Govardhan Hill is one of the most sacred sites in the entire Braj Mandal. Lord Krishna lifted this divine hill on his little finger for seven days to protect the people of Vraja from Indra's torrential rains. The Govardhan Parikrama — a 21 km circumambulation of the hill — is considered one of the most spiritually rewarding acts for a devotee. Braj Miles organises Govardhan Parikrama packages with comfortable halts at Radha Kund, Kusum Sarovar and Manasi Ganga.",
+    longDesc: "Govardhan Hill is one of the most sacred sites in the entire Braj Mandal. Lord Krishna lifted this divine hill on his little finger for seven days to protect the people of Vraja from Indra's torrential rains. The Govardhan Parikrama — a 21 km circumambulation of the hill — is considered one of the most spiritually rewarding acts for a devotee. Braj Miles organises Govardhan Parikrama packages with comfortable halts at Radha Kund, Kusum Sarovar and Manasi Ganga.",
     temples: [
       { name: "Danghati Mandir", img: govardhanDanghati, desc: "Govardhan's most visited temple" },
-      { name: "Manasi Ganga", img: govardhanManasi, desc: "Sacred kund at the heart of Govardhan" },
-      { name: "Kusum Sarovar", img: govardhanKusum, desc: "Beautiful ancient stepwell lake" },
-      { name: "Radha Kund", img: govardhanRadhaKund, desc: "Most sacred kund in all of Braj" },
+      { name: "Manasi Ganga",    img: govardhanManasi,   desc: "Sacred kund at the heart of Govardhan" },
+      { name: "Kusum Sarovar",   img: govardhanKusum,    desc: "Beautiful ancient stepwell lake" },
+      { name: "Radha Kund",      img: govardhanRadhaKund, desc: "Most sacred kund in all of Braj" },
     ],
   },
   nandgaon: {
     name: "Nandgaon",
     cover: nandgaon,
     description: "Home of Nanda Maharaj, Krishna's foster father.",
-    longDesc:
-      "Nandgaon is the village of Nanda Maharaj — the foster father of Lord Krishna — located about 8 km from Barsana. The famous Nandmahal temple here sits atop a hill and offers panoramic views of the Braj countryside. Nandgaon is also celebrated for the Lathmar Holi, where the men of Nandgaon come to Barsana and are chased away by women with sticks in a joyful re-enactment of Krishna's playful visit to Radha Rani. Braj Miles includes Nandgaon in all comprehensive Braj Yatra packages.",
+    longDesc: "Nandgaon is the village of Nanda Maharaj — the foster father of Lord Krishna — located about 8 km from Barsana. The famous Nandmahal temple here sits atop a hill and offers panoramic views of the Braj countryside. Nandgaon is also celebrated for the Lathmar Holi, where the men of Nandgaon come to Barsana and are chased away by women with sticks in a joyful re-enactment of Krishna's playful visit to Radha Rani. Braj Miles includes Nandgaon in all comprehensive Braj Yatra packages.",
     temples: [
       { name: "Nandmahal", img: nandgaonNandmahal, desc: "Palace temple of Nanda Maharaj atop the hill" },
     ],
@@ -118,12 +104,11 @@ const DATA: Record<
     name: "Barsana",
     cover: barsana,
     description: "The blessed birthplace of Shrimati Radharani.",
-    longDesc:
-      "Barsana is the birthplace of Shrimati Radharani — the eternal consort of Lord Krishna. Perched on four hills, Barsana is home to the magnificent Radha Rani temple and is considered the most sacred place for devotees of Radha Rani. Barsana is world-famous for Lathmar Holi — a unique celebration where women playfully beat men with sticks. Braj Miles offers special Barsana tour packages, including Lathmar Holi experiences, darshan at Kirti Mandir and Rangili Mahal.",
+    longDesc: "Barsana is the birthplace of Shrimati Radharani — the eternal consort of Lord Krishna. Perched on four hills, Barsana is home to the magnificent Radha Rani temple and is considered the most sacred place for devotees of Radha Rani. Barsana is world-famous for Lathmar Holi — a unique celebration where women playfully beat men with sticks. Braj Miles offers special Barsana tour packages, including Lathmar Holi experiences, darshan at Kirti Mandir and Rangili Mahal.",
     temples: [
-      { name: "Shri Radha Janmsthan", img: barsanaRadha, desc: "Sacred birthplace of Shrimati Radharani" },
-      { name: "Rangili Mahal", img: barsanaRangili, desc: "Colourful palace of the Holi celebrations" },
-      { name: "Kirti Mandir", img: barsanaKirti, desc: "Temple dedicated to Radha Rani's mother" },
+      { name: "Shri Radha Janmsthan", img: barsanaRadha,   desc: "Sacred birthplace of Shrimati Radharani" },
+      { name: "Rangili Mahal",         img: barsanaRangili, desc: "Colourful palace of the Holi celebrations" },
+      { name: "Kirti Mandir",          img: barsanaKirti,   desc: "Temple dedicated to Radha Rani's mother" },
     ],
   },
 };
@@ -142,9 +127,7 @@ function DestinationPage() {
         <Header />
         <main className="container-pro py-32 text-center">
           <h1 className="text-4xl font-bold">Destination not found</h1>
-          <Link to="/" className="mt-6 inline-block text-brand underline">
-            Go home
-          </Link>
+          <Link to="/" className="mt-6 inline-block text-brand underline">Go home</Link>
         </main>
         <Footer />
       </div>
@@ -168,9 +151,7 @@ function DestinationPage() {
               Braj Miles — Sacred Destination
             </span>
             <h1 className="mt-3 text-4xl font-bold md:text-7xl">{data.name}</h1>
-            <p className="mt-4 max-w-2xl text-base text-white/90 md:text-lg">
-              {data.description}
-            </p>
+            <p className="mt-4 max-w-2xl text-base text-white/90 md:text-lg">{data.description}</p>
           </div>
         </section>
 
@@ -178,9 +159,7 @@ function DestinationPage() {
         <section className="py-12 md:py-16">
           <div className="container-pro">
             <div className="mx-auto max-w-3xl rounded-2xl bg-secondary p-6 md:p-10">
-              <h2 className="text-2xl font-bold text-foreground md:text-3xl">
-                About {data.name}
-              </h2>
+              <h2 className="text-2xl font-bold text-foreground md:text-3xl">About {data.name}</h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">{data.longDesc}</p>
               <a
                 href="https://wa.me/919027674560"
@@ -198,9 +177,7 @@ function DestinationPage() {
         <section className="pb-20 md:pb-28">
           <div className="container-pro">
             <div className="mx-auto max-w-2xl text-center">
-              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
-                Sacred Sites
-              </span>
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">Sacred Sites</span>
               <h2 className="mt-3 text-4xl font-bold text-foreground md:text-5xl">
                 Temples of {data.name}
               </h2>
@@ -228,12 +205,8 @@ function DestinationPage() {
                       />
                     </div>
                     <div className="p-4 text-center">
-                      <h3 className="text-lg font-semibold text-foreground">
-                        {i + 1}. {t.name}
-                      </h3>
-                      {t.desc && (
-                        <p className="mt-1 text-sm text-muted-foreground">{t.desc}</p>
-                      )}
+                      <h3 className="text-lg font-semibold text-foreground">{i + 1}. {t.name}</h3>
+                      {t.desc && <p className="mt-1 text-sm text-muted-foreground">{t.desc}</p>}
                     </div>
                   </article>
                 ))}

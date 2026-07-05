@@ -4,10 +4,7 @@ import { Reveal } from "./Reveal";
 
 export function ExploreBanner() {
   return (
-    <section
-      className="relative isolate overflow-hidden"
-      aria-labelledby="explore-braj-heading"
-    >
+    <section className="relative isolate overflow-hidden" aria-labelledby="explore-braj-heading">
       <img
         src={banner}
         alt="Krishna's flute with peacock feather — Braj Miles spiritual tours"
@@ -41,19 +38,17 @@ export function ExploreBanner() {
               href="https://wa.me/919027674560"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand shadow-card transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-brand shadow-card transition-transform hover:-translate-y-0.5"
             >
               Start planning <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href="/#packages"
-              className="inline-flex items-center gap-2 rounded-full border border-white/50 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="inline-flex items-center gap-2 rounded-full border border-white/50 px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white/10"
             >
               View packages
             </a>
           </div>
-
-          {/* Keyword pills for SEO + UX */}
           <div className="mt-8 flex flex-wrap gap-2" aria-label="Popular Braj Miles tour destinations">
             {[
               "Vrindavan Tour",

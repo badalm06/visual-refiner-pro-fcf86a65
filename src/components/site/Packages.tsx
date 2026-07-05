@@ -9,48 +9,13 @@ import braj1 from "@/assets/taj-mahal-2.jpg";
 import { Reveal } from "./Reveal";
 
 const TOURS = [
-  {
-    img: day1,
-    title: "Vrindavan Tour",
-    count: "Day-1",
-    desc: "Banke Bihari, Prem Mandir & Nidhivan",
-  },
-  {
-    img: day2,
-    title: "Mathura Tour",
-    count: "Day-2",
-    desc: "Shri Krishna Janmbhumi & Vishram Ghat",
-  },
-  {
-    img: day3,
-    title: "Gokul Tour",
-    count: "Day-2",
-    desc: "Raman Reti & Brahmand Ghat",
-  },
-  {
-    img: day4,
-    title: "Govardhan Tour",
-    count: "Day-3",
-    desc: "Govardhan Parikrama & Radha Kund",
-  },
-  {
-    img: day5,
-    title: "Nandgaon Tour",
-    count: "Day-3",
-    desc: "Nandmahal & Yashoda Bhawan",
-  },
-  {
-    img: day6,
-    title: "Barsana Tour",
-    count: "Day-3",
-    desc: "Radha Rani temple & Kirti Mandir",
-  },
-  {
-    img: braj1,
-    title: "Agra Tour",
-    count: "Day-4",
-    desc: "Taj Mahal & Agra Fort",
-  },
+  { img: day1, title: "Vrindavan Tour", count: "Day-1", desc: "Banke Bihari, Prem Mandir & Nidhivan" },
+  { img: day2, title: "Mathura Tour",   count: "Day-2", desc: "Shri Krishna Janmbhumi & Vishram Ghat" },
+  { img: day3, title: "Gokul Tour",     count: "Day-2", desc: "Raman Reti & Brahmand Ghat" },
+  { img: day4, title: "Govardhan Tour", count: "Day-3", desc: "Govardhan Parikrama & Radha Kund" },
+  { img: day5, title: "Nandgaon Tour",  count: "Day-3", desc: "Nandmahal & Yashoda Bhawan" },
+  { img: day6, title: "Barsana Tour",   count: "Day-3", desc: "Radha Rani temple & Kirti Mandir" },
+  { img: braj1, title: "Agra Tour",     count: "Day-4", desc: "Taj Mahal & Agra Fort" },
 ];
 
 export function Packages() {
@@ -58,19 +23,13 @@ export function Packages() {
     <section id="packages" className="bg-secondary py-20 md:py-28" aria-labelledby="packages-heading">
       <div className="container-pro">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
-            Memorable trips
-          </span>
-          <h2
-            id="packages-heading"
-            className="mt-3 text-4xl font-extrabold text-foreground md:text-5xl"
-          >
+          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">Memorable trips</span>
+          <h2 id="packages-heading" className="mt-3 text-4xl font-extrabold text-foreground md:text-5xl">
             Complete Braj Yatra Package
           </h2>
           <p className="mt-4 text-muted-foreground">
             Experience the divine &amp; spiritual journey of Braj Mandal with Braj Miles —
-            covering Vrindavan, Mathura, Govardhan, Gokul, Barsana &amp; Nandgaon in one
-            seamless tour.
+            covering Vrindavan, Mathura, Govardhan, Gokul, Barsana &amp; Nandgaon in one seamless tour.
           </p>
         </Reveal>
 
@@ -86,9 +45,7 @@ export function Packages() {
               <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
               <div className="relative flex h-full flex-col justify-center p-8 text-white">
                 <div className="font-display text-4xl md:text-5xl">
-                  <em className="not-italic font-serif italic text-left">
-                    We Are Center of 'Braj'
-                  </em>
+                  <em className="not-italic font-serif italic text-left">We Are Center of 'Braj'</em>
                 </div>
                 <p className="mt-3 text-sm text-white/80 leading-relaxed">
                   Braj Miles is based in the heart of Braj Bhoomi — your gateway to
@@ -106,7 +63,7 @@ export function Packages() {
             </article>
           </Reveal>
 
-          {/* Tour cards grid */}
+          {/* Tour cards */}
           {TOURS.map((t, i) => (
             <Reveal key={t.title} delay={i * 60}>
               <article className="hover-lift group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-soft">

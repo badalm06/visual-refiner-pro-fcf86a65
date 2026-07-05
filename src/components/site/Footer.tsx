@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Mail, Phone, Youtube } from "lucide-react";
+import logo from "@/assets/brajmiles-logo.png";
 
 const PHONE_DISPLAY = "+91 90276 74560";
 const PHONE_TEL = "tel:+919027674560";
@@ -31,10 +32,8 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <img
-              src="/brajmiles-logo.png"
+              src={logo}
               alt="Braj Miles logo"
-              width={48}
-              height={48}
               className="h-12 w-12 rounded-full object-cover"
             />
             <div>
@@ -78,7 +77,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Braj Destinations — SEO-rich internal links */}
+        {/* Braj Destinations */}
         <div>
           <h3 className="font-display text-lg font-semibold">Braj Destinations</h3>
           <ul className="mt-5 space-y-3 text-sm text-background/70">
@@ -118,26 +117,17 @@ export function Footer() {
           <ul className="mt-5 space-y-4 text-sm text-background/70">
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
-              <a href={PHONE_TEL} className="hover:text-gold">
-                {PHONE_DISPLAY}
-              </a>
+              <a href={PHONE_TEL} className="hover:text-gold">{PHONE_DISPLAY}</a>
             </li>
             <li className="flex items-start gap-3">
               <WhatsAppIcon className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gold"
-              >
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-gold">
                 WhatsApp chat
               </a>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
-              <a href={`mailto:${EMAIL}`} className="hover:text-gold break-all">
-                {EMAIL}
-              </a>
+              <a href={`mailto:${EMAIL}`} className="hover:text-gold break-all">{EMAIL}</a>
             </li>
             <li className="mt-2 text-xs text-background/50 leading-relaxed">
               Based in Mathura, Uttar Pradesh, India —<br />
@@ -147,7 +137,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* SEO keyword footer paragraph */}
+      {/* SEO keyword paragraph */}
       <div className="border-t border-background/10">
         <div className="container-pro py-6">
           <p className="text-center text-xs text-background/40 leading-relaxed max-w-4xl mx-auto">

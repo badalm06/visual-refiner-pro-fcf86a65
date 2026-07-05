@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Menu, Phone, X } from "lucide-react";
+import logo from "@/assets/brajmiles-logo.png";
 
 const WHATSAPP_URL = "https://wa.me/919027674560";
 
@@ -53,7 +54,6 @@ export function Header() {
     return () => ro.disconnect();
   }, []);
 
-  // Close mobile menu on resize back to desktop
   useEffect(() => {
     if (!collapsed) setOpen(false);
   }, [collapsed]);
@@ -80,7 +80,7 @@ export function Header() {
           </div>
           <div className="flex shrink-0 animate-marquee gap-16 pr-16">
             {MARQUEE_ITEMS.map((item, i) => (
-              <span key={i} className="flex items-center gap-3">
+              <span key={`b-${i}`} className="flex items-center gap-3">
                 <span className="text-gold">✦</span>
                 {item}
               </span>
@@ -91,10 +91,9 @@ export function Header() {
 
       {/* Main nav bar */}
       <div className="container-pro flex h-16 items-center justify-between gap-3 md:h-20">
-        {/* Logo — uses public/brajmiles-logo.png */}
         <Link to="/" className="flex shrink-0 items-center gap-2 min-w-0" aria-label="Braj Miles — Home">
           <img
-            src="/brajmiles-logo.png"
+            src={logo}
             alt="Braj Miles logo"
             width={48}
             height={48}
@@ -123,7 +122,7 @@ export function Header() {
                 key={n.label}
                 href={n.href}
                 {...(n.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className={`whitespace-nowrap font-medium text-foreground transition-colors hover:text-brand focus-visible:outline-none focus-visible:text-brand ${
+                className={`whitespace-nowrap font-medium text-foreground transition-colors hover:text-brand ${
                   compact ? "text-xs" : "text-sm"
                 }`}
               >
@@ -139,7 +138,7 @@ export function Header() {
             <a
               href={PHONE_TEL}
               aria-label={`Call Braj Miles at ${PHONE_DISPLAY}`}
-              className={`inline-flex items-center gap-2 rounded-full bg-gradient-brand font-semibold text-brand-foreground shadow-soft transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+              className={`inline-flex items-center gap-2 rounded-full bg-gradient-brand font-semibold text-brand-foreground shadow-soft transition-transform hover:-translate-y-0.5 ${
                 compact ? "px-3 py-2 text-xs" : "px-5 py-2.5 text-sm"
               }`}
             >
@@ -164,7 +163,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {collapsed && open && (
-        <div className="border-t border-border bg-background/98 backdrop-blur-md">
+        <div className="border-t border-border bg-background/95 backdrop-blur-md">
           <nav aria-label="Mobile navigation" className="container-pro flex flex-col gap-1 py-4">
             {NAV.map((n) => (
               <a

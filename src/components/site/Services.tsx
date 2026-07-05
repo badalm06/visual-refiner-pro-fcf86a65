@@ -29,10 +29,7 @@ export function Services() {
           <span className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
             What we offer
           </span>
-          <h2
-            id="services-heading"
-            className="mt-3 text-4xl font-bold text-foreground md:text-5xl"
-          >
+          <h2 id="services-heading" className="mt-3 text-4xl font-bold text-foreground md:text-5xl">
             Our Services
           </h2>
           <p className="mt-4 text-muted-foreground">

@@ -1,7 +1,7 @@
 import { Reveal } from "./Reveal";
-import luxuryStay from "@/assets/service-luxury-stay.jpeg";
-import transport from "@/assets/service-transport.jpeg";
-import tourGuide from "@/assets/service-tour-guide.jpeg";
+import luxuryStay from "@/assets/service-luxury-stay.png";
+import transport from "@/assets/service-transport.png";
+import tourGuide from "@/assets/service-tour-guide.png";
 
 const SERVICES = [
   {
@@ -33,7 +33,7 @@ export function Services() {
             Our Services
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Braj Miles takes care of every detail — stay, transport and guidance — so your
+            Braj Miles takes care of every detail - stay, transport and guidance - so your
             Braj Yatra is effortless and spiritually enriching.
           </p>
         </Reveal>
